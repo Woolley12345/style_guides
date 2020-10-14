@@ -14,4 +14,5 @@ If the style of plots does not update correctly (i.e. there are no changes to th
 Note: You can find out where you matplotlib directory is by running:
 
 import matplotlib as mpl
+
 mpl.get_configdir()
