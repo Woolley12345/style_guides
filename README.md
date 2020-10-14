@@ -12,5 +12,6 @@ These style guides can be used by following the process below:
 If the style of plots does not update correctly (i.e. there are no changes to the plotting style) try closing the open kernel and re-importing matplotlib in a new kernel
 
 Note: You can find out where you matplotlib directory is by running:
+
 import matplotlib as mpl
 mpl.get_configdir()
