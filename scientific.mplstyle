@@ -8,6 +8,12 @@
 ## Author: Thomas Woolley
 ##
 ## Version 1.0: 14th October 2020
+##          - Initial file creation
+## Version 1.1: 15th October 2020
+##          - Changed the default colours to tab:blue, tab:orange, tab:red and tab:green
+##          - Reduced the line width to 2.0 (from 2.5)
+##	    - Added in minor tick marks
+##
 ##
 ##
 ##
@@ -16,12 +22,12 @@
 ### LINES
 # See http://matplotlib.org/api/artist_api.html#module-matplotlib.lines for more
 # information on line properties.
-lines.linewidth   : 2.5     # line width in points
+lines.linewidth   : 2.0     # line width in points
 lines.linestyle   : -       # solid line
-lines.color       : C0       # has no affect on plot(); see axes.prop_cycle
+lines.color       : None       # has no affect on plot(); see axes.prop_cycle
 lines.marker      : None    # the default marker
-lines.markerfacecolor  : auto    # the default markerfacecolor
-lines.markeredgecolor  : auto    # the default markeredgecolor
+lines.markerfacecolor  : black    # the default markerfacecolor
+lines.markeredgecolor  : black    # the default markeredgecolor
 lines.markeredgewidth  : 1.0     # the line width around the marker symbol
 lines.markersize  : 6            # markersize, in points
 lines.dash_joinstyle : round        # miter|round|bevel
@@ -48,9 +54,9 @@ pcolormesh.snap : True  # Whether to snap the mesh to pixel boundaries. This
 # http://matplotlib.org/api/artist_api.html#module-matplotlib.patches
 # information on patch properties
 patch.linewidth        : 1.0     # edge width in points
-patch.facecolor        : grey
+patch.facecolor        : black
 patch.force_edgecolor  : False
-patch.edgecolor        : grey
+patch.edgecolor        : black
 patch.antialiased      : True    # render patches in antialiased (no jaggies)
 
 hatch.color            : black
@@ -228,7 +234,7 @@ axes.formatter.offset_threshold : 4      # When useoffset is True, the offset
 axes.unicode_minus  : True    # use unicode for the minus symbol
                               # rather than hyphen.  See
                               # http://en.wikipedia.org/wiki/Plus_and_minus_signs#Character_codes
-axes.prop_cycle    : cycler(color=['black', 'darkorange', 'purple'])
+axes.prop_cycle    : cycler(color=['tab:blue', 'tab:orange', 'tab:red', 'tab:green'])
                                            # color cycle for plot lines
                                            # as list of string colorspecs:
                                            # single letter, long name, or
@@ -254,7 +260,7 @@ date.autoformatter.microsecond: %M:%S.%f
 ### TICKS
 # see http://matplotlib.org/api/axis_api.html#matplotlib.axis.Tick
 
-xtick.top            : False   # draw ticks on the top side
+xtick.top            : True   # draw ticks on the top side
 xtick.bottom         : True   # draw ticks on the bottom side
 xtick.major.size     : 6.0      # major tick size in points
 xtick.minor.size     : 2.0      # minor tick size in points
@@ -275,8 +281,8 @@ xtick.alignment : center
 ytick.left           : True   # draw ticks on the left side
 ytick.right          : True   # draw ticks on the right side
 ytick.major.size     : 6.0      # major tick size in points
-ytick.minor.size     : 2      # minor tick size in points
-ytick.minor.visible  : False
+ytick.minor.size     : 3.0      # minor tick size in points
+ytick.minor.visible  : True
 ytick.major.width    : 0.8    # major tick width in points
 ytick.minor.width    : 0.6    # minor tick width in points
 ytick.major.pad      : 3.5      # distance to major tick label in points
@@ -340,7 +346,7 @@ figure.subplot.bottom  : 0.07    # the bottom of the subplots of the figure
 figure.subplot.top     : 0.95    # the top of the subplots of the figure
 figure.subplot.wspace  : 0.2    # the amount of width reserved for space between subplots,
                                 # expressed as a fraction of the average axis width
-figure.subplot.hspace  : 0.15    # the amount of height reserved for space between subplots,
+figure.subplot.hspace  : 0.10    # the amount of height reserved for space between subplots,
                                 # expressed as a fraction of the average axis height
 
 ### IMAGES
@@ -361,6 +367,7 @@ errorbar.capsize: 3
 
 # scatter props
 scatter.marker: s
+scatter.edgecolor: black
 
 ### Boxplots
 boxplot.bootstrap: None
